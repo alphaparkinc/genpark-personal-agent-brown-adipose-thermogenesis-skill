@@ -1,0 +1,62 @@
+{
+  "name": "genpark-personal-agent-brown-adipose-thermogenesis-skill",
+  "version": "1.0.0",
+  "title": "Brown Adipose Tissue (BAT) Non-Shivering Thermogenesis Skill",
+  "description": "Cold-induced non-shivering thermogenesis (NST) metabolic rate booster, UCP1 uncoupling protein stimulation index, and shivering threshold pacer. Built for GenPark (https://www.genpark.ai).",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.linkedin.com/company/92955550",
+  "category": "personal-agent",
+  "topics": [
+    "brown-fat",
+    "thermogenesis",
+    "cold-exposure",
+    "ucp1",
+    "personal-agent",
+    "model-context-protocol",
+    "genpark"
+  ],
+  "tools": [
+    {
+      "name": "calculate_bat_thermogenic_caloric_burn",
+      "description": "Calculate extra metabolic kcal expenditure from cold-water immersion or cool air exposure via Brown Adipose Tissue UCP1 activation.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "exposure_temp_celsius": {
+            "type": "number"
+          },
+          "duration_minutes": {
+            "type": "number"
+          },
+          "cold_acclimatization_tier": {
+            "type": "string",
+            "enum": [
+              "naive",
+              "habituated",
+              "cold_adapted"
+            ]
+          }
+        },
+        "required": [
+          "exposure_temp_celsius",
+          "duration_minutes"
+        ]
+      }
+    },
+    {
+      "name": "prescribe_soberg_principle_cold_protocol",
+      "description": "Formulate S\u00f8berg protocol (minimum 11 minutes total cold water immersion per week) to maximize BAT volume.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "weekly_sessions": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "weekly_sessions"
+        ]
+      }
+    }
+  ]
+}
